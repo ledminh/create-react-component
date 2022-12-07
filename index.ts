@@ -1,3 +1,4 @@
+
 import fs from 'fs';
 import getIndexText from './indexText';
 
@@ -7,19 +8,21 @@ function run() {
 
     if(process.argv.length < 3)
         throw Error('Component name not found');
-    
+
+    const argv = require('yargs').argv;
+
     const pathPointerIndex = process.argv.indexOf('-p');
     
     let path:string|null = null;
     
-    if(pathPointerIndex !== -1) {
-        path = process.argv[pathPointerIndex + 1];
+    if(argv.p) {
+        path = argv.p as string;
         
         if(path[path.length - 1] !== '/')
-        path = path + '/';
+            path = path + '/';
     }
     
-    const componentNames = process.argv.slice(2).filter(elem => elem !== '-p' && elem !== path?.slice(0, path.length - 1));
+    const componentNames:string[] = argv._;
 
     
     componentNames.forEach(componentName => {
