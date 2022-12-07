@@ -11,7 +11,6 @@ function run() {
 
     const argv = require('yargs').argv;
 
-    const pathPointerIndex = process.argv.indexOf('-p');
     
     let path:string|null = null;
     
