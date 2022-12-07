@@ -2,8 +2,7 @@ import fs from 'fs';
 import getIndexText from './indexText';
 
 
-function main() {
-
+function run() {
 
 
     if(process.argv.length < 3)
@@ -36,6 +35,5 @@ function main() {
     })
 }
 
-
-
-export default main;
+if(require.main == module)
+    run();
