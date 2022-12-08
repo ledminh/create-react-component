@@ -1,6 +1,6 @@
 {
   "name": "ledminh-create-react-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small snipset used to create React Component",
   "main": "index.js",
   "scripts": {

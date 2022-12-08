@@ -6,7 +6,7 @@ import getIndexText from './indexText';
 function run() {
 
 
-    if(process.argv.length < 3)
+    if((process as NodeJS.Process).argv.length < 3)
         throw Error('Component name not found');
 
     const argv = require('yargs').argv;
@@ -30,8 +30,7 @@ function run() {
         fs.mkdir((path? path : '') + componentName, {recursive:true}, (err) => {
             if(err) throw err;
         
-            fs.writeFileSync((path? path : '') + componentName + '/index.tsx', indexText);
-        
+            fs.writeFileSync((path? path : '') + componentName + '/index.tsx', indexText);        
             fs.writeFileSync((path? path : '') + componentName + `/${componentName}.module.scss`, '');
         });
     })
