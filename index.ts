@@ -1,10 +1,6 @@
-
-import fs from 'fs';
-import getIndexText from './indexText';
-
-
 function run() {
-
+    const fs = require('fs');
+    const getIndexText = require('./indexText');
 
     if(process.argv.length < 3)
         throw Error('Component name not found');
@@ -27,7 +23,7 @@ function run() {
     componentNames.forEach(componentName => {
         const indexText = getIndexText(componentName);
     
-        fs.mkdir((path? path : '') + componentName, {recursive:true}, (err) => {
+        fs.mkdir((path? path : '') + componentName, {recursive:true}, (err:Error) => {
             if(err) throw err;
         
             fs.writeFileSync((path? path : '') + componentName + '/index.tsx', indexText);        

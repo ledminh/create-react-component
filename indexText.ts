@@ -1,4 +1,4 @@
-export default function getIndexText(componentName:string):string  {
+module.exports = function getIndexText(componentName:string):string  {
 
     return `import { FunctionComponent } from "react";
 
