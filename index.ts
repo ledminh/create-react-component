@@ -6,7 +6,7 @@ import getIndexText from './indexText';
 function run() {
 
 
-    if((process as NodeJS.Process).argv.length < 3)
+    if(process.argv.length < 3)
         throw Error('Component name not found');
 
     const argv = require('yargs').argv;
